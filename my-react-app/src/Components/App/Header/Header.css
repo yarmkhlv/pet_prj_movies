@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: #18181b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__text-home {
+  margin-left: 25px;
+  color: #efeff1;
+}
+
+.header__btn-login {
+  margin-right: 50px;
+  width: 60px;
+  height: 30px;
+  background-color: #9147ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}

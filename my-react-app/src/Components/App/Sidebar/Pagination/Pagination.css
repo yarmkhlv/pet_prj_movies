@@ -1,0 +1,27 @@
+.pagination {
+  margin-top: 10px;
+  width: 100%;
+}
+.pagination__btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.pagination__btns-el {
+  width: 70px;
+  height: 25px;
+  background-color: #2a2a2d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.pagination__btns-el:hover {
+  background-color: #9147ff;
+  color: white;
+  transition: all 0.3s linear;
+}
+
+.pagination__pages {
+  margin-top: 10px;
+  text-align: center;
+}

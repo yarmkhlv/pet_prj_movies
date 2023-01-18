@@ -1,18 +1,20 @@
-import "./Sidebar.css";
-import genres from "../../../additional/const";
-import Pagination from "./Pagination/Pagination";
+import './Sidebar.css';
+import genres from '../../../additional/const';
+import Pagination from './Pagination/Pagination';
 
 function Sidebar() {
   const labelsElems = genres.map((label) => (
-    <label className="sidebar__label" key={label}>
-      <input type="checkbox" name={label} value="yes" />
+    <label htmlFor="filter" className="sidebar__label" key={label}>
+      <input type="checkbox" name={label} value="yes" id="filter" />
       <span>{label}</span>
     </label>
   ));
   return (
     <div className="sidebar">
       <h2 className="sidebar__text-filters">Фильтры:</h2>
-      <button className="sidebar__btn-reset">Сбросить все фильтры</button>
+      <button type="button" className="sidebar__btn-reset">
+        Сбросить все фильтры
+      </button>
       <div>
         <p className="sidebar__text-el">Сортировать по:</p>
         <select className="sidebar__select" name="criterion">

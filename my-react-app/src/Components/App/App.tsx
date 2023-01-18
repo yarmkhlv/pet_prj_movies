@@ -1,7 +1,7 @@
-import Header from "./Header/Header";
-import MovieList from "./MovieList/MovieList";
-import Sidebar from "./Sidebar/Sidebar";
-import "./App.css";
+import Header from './Header/Header';
+import MovieList from './MovieList/MovieList';
+import Sidebar from './Sidebar/Sidebar';
+import './App.css';
 
 function App() {
   return (

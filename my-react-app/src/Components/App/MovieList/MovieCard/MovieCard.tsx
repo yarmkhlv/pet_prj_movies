@@ -1,4 +1,4 @@
-import "./MovieCard.css";
+import './MovieCard.css';
 
 function MovieCard() {
   return (
@@ -8,8 +8,16 @@ function MovieCard() {
           <p>8.5</p>
         </div>
         <div className="movieCard__info-btns">
-          <button type="button" className="info-btns__favorites"></button>
-          <button type="button" className="info-btns__postpone"></button>
+          <button
+            type="button"
+            className="info-btns__favorites"
+            aria-label="Add to favourites"
+          />
+          <button
+            type="button"
+            className="info-btns__postpone"
+            aria-label="Add to postpones"
+          />
         </div>
       </div>
       <div className="movieCard__text-name">

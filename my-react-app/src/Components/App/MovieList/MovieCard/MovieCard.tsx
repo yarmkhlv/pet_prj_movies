@@ -1,27 +1,31 @@
 import './MovieCard.css';
 
-function MovieCard() {
+function MovieCard(props: { rating: number; title: string; path: string }) {
+  const { rating, title, path } = props;
   return (
     <div className="movieCard">
-      <div className="movieCard__info">
-        <div className="movieCard__info-rating">
-          <p>8.5</p>
+      <div className="movieCard__poster">
+        <img
+          className="movieCard__poster-img"
+          src="../../../src/assets/poster2.jpeg"
+          alt="poster"
+        />
+        <div className="movieCard__poster-rating">
+          <p>{rating}</p>
         </div>
-        <div className="movieCard__info-btns">
+        <div className="movieCard__poster-btns">
           <button
             type="button"
-            className="info-btns__favorites"
+            className="poster-btns__favorites"
             aria-label="Add to favourites"
           />
           <button
             type="button"
-            className="info-btns__postpone"
+            className="poster-btns__postpone"
             aria-label="Add to postpones"
           />
         </div>
-      </div>
-      <div className="movieCard__text-name">
-        Клинок расскеающий демонов поезд бесконенчости
+        <div className="movieCard__poster-title">{title}</div>
       </div>
     </div>
   );

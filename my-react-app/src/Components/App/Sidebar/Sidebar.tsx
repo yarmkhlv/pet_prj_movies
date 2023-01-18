@@ -1,12 +1,12 @@
 import './Sidebar.css';
-import genres from '../../../additional/const';
+import genres from '../../../additional/consts';
 import Pagination from './Pagination/Pagination';
 
 function Sidebar() {
   const labelsElems = genres.map((label) => (
-    <label htmlFor="filter" className="sidebar__label" key={label}>
-      <input type="checkbox" name={label} value="yes" id="filter" />
-      <span>{label}</span>
+    <label htmlFor="filter" className="sidebar__label" key={label.id}>
+      <input type="checkbox" name={label.name} value="yes" id="filter" />
+      <span>{label.name}</span>
     </label>
   ));
   return (

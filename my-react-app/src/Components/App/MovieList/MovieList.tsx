@@ -1,14 +1,16 @@
 import MovieCard from './MovieCard/MovieCard';
-import movies, { Movie } from '../../../additional/const';
+import { Films } from '../../../additional/films';
 import './MovieList.css';
 
-function MovieList() {
-  const renderMovieCards = movies.map((obj: Movie) => (
+function MovieList(props: { currentMovies: Films[] }) {
+  const { currentMovies } = props;
+  const renderMovieCards = currentMovies.map((obj: Films) => (
     <MovieCard
       rating={obj.vote_average}
       title={obj.title}
       key={obj.id}
       path={obj.poster_path}
+      backdropPath={obj.backdrop_path}
     />
   ));
 

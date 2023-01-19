@@ -2,7 +2,11 @@ import './Sidebar.css';
 import genres from '../../../additional/consts';
 import Pagination from './Pagination/Pagination';
 
-function Sidebar() {
+function Sidebar(props: {
+  currentPage: number;
+  setCurrentPage: (a: number) => void;
+}) {
+  const { currentPage, setCurrentPage } = props;
   const labelsElems = genres.map((label) => (
     <label htmlFor="filter" className="sidebar__label" key={label.id}>
       <input type="checkbox" name={label.name} value="yes" id="filter" />
@@ -32,7 +36,7 @@ function Sidebar() {
         </select>
       </div>
       <div className="sidebar__labels-block">{labelsElems}</div>
-      <Pagination />
+      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>
   );
 }

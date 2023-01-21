@@ -8,6 +8,7 @@ const getMovies = (
   page: number,
   sort: string,
   filt: string,
+  check: number[],
   perPage: number
 ) => {
   const sortedArr: Films[] = (function sorting() {
@@ -26,7 +27,7 @@ const getMovies = (
     }
   })();
 
-  const sortedAndFiltred: Films[] = (function filtration() {
+  const sortedFiltred: Films[] = (function filtration() {
     if (filt !== SELECTED_YEAR.any) {
       return sortedArr.filter(
         (movie: Films) => getYear(movie.release_date) === Number(filt)
@@ -34,15 +35,22 @@ const getMovies = (
     }
     return sortedArr;
   })();
-
+  const sortedFiltredChecked = (function checking() {
+    if (check.length > 0) {
+      return sortedFiltred.filter((movie) =>
+        movie.genre_ids.some((genreId) => check.includes(genreId))
+      );
+    }
+    return sortedFiltred;
+  })();
   const forPage: Films[] = (function cutting() {
     if (page === 1) {
-      return sortedAndFiltred.slice(0, perPage);
+      return sortedFiltredChecked.slice(0, perPage);
     }
-    return sortedAndFiltred.slice((page - 1) * perPage, page * perPage);
+    return sortedFiltredChecked.slice((page - 1) * perPage, page * perPage);
   })();
   return {
-    sortedAndFiltred,
+    sortedFiltredChecked,
     forPage,
   };
 };

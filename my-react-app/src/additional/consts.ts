@@ -12,6 +12,12 @@ const SELECTED_YEAR = {
   2017: 2017,
 };
 const PER_PAGE = 10;
+
+export type Genre = {
+  id: number;
+  name: string;
+};
+
 const genres = [
   {
     id: 28,

@@ -10,6 +10,7 @@ import {
   SELECTED_YEAR,
   PER_PAGE,
 } from '../../additional/consts';
+import getIdFromGenres from '../../additional/getIdFromGenres';
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,14 +18,31 @@ function App() {
     SELECTED_VALUE.popularDescending
   );
   const [currentFilter, setCurrentFilter] = useState(SELECTED_YEAR.any);
+  const [currentChecked, setCurrentChecked] = useState<number[]>([]);
   const [currentMovies, setCurrentMovies] = useState(
-    getMovies(films, 0, currentSort, currentFilter, PER_PAGE)
+    getMovies(films, 0, currentSort, currentFilter, currentChecked, PER_PAGE)
   );
+  const addGenreId = (name: string) => {
+    const id: number | null = getIdFromGenres(name);
+    if (id) {
+      if (currentChecked.find((genreId) => genreId === id)) {
+        const filteredArr = currentChecked.filter((genreId) => genreId !== id);
+        setCurrentChecked([...filteredArr]);
+      } else setCurrentChecked([...currentChecked, id]);
+    }
+  };
   useEffect(() => {
     setCurrentMovies(
-      getMovies(films, currentPage, currentSort, currentFilter, PER_PAGE)
+      getMovies(
+        films,
+        currentPage,
+        currentSort,
+        currentFilter,
+        currentChecked,
+        PER_PAGE
+      )
     );
-  }, [currentFilter, currentPage, currentSort]);
+  }, [currentFilter, currentPage, currentSort, currentChecked]);
   return (
     <div className="App">
       <Header />
@@ -34,7 +52,8 @@ function App() {
           setCurrentPage={setCurrentPage}
           setCurrentSort={setCurrentSort}
           setCurrentFilter={setCurrentFilter}
-          filtredMovies={currentMovies.sortedAndFiltred}
+          filtredMovies={currentMovies.sortedFiltredChecked}
+          addGenreId={addGenreId}
         />
         <MovieList moviesForPage={currentMovies.forPage} />
       </main>

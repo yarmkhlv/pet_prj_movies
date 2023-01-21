@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Films } from '../../../../additional/films';
 import { PER_PAGE } from '../../../../additional/consts';
 import './Pagination.css';
@@ -8,7 +9,12 @@ function Pagination(props: {
   filtredMovies: Films[];
 }) {
   const { currentPage, setCurrentPage, filtredMovies } = props;
-  const lastPage = Math.ceil(filtredMovies.length / PER_PAGE);
+  const [lastPage, setLastPage] = useState(
+    Math.ceil(filtredMovies.length / PER_PAGE)
+  );
+  useEffect(() => {
+    setLastPage(Math.ceil(filtredMovies.length / PER_PAGE));
+  }, [filtredMovies]);
   return (
     <div className="pagination">
       <div className="pagination__btns">

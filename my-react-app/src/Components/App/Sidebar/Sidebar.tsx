@@ -13,6 +13,7 @@ function Sidebar(props: {
   setCurrentSort: (a: string) => void;
   setCurrentFilter: (a: string) => void;
   filtredMovies: Films[];
+  addGenreId: (name: string) => void;
 }) {
   const {
     currentPage,
@@ -20,10 +21,17 @@ function Sidebar(props: {
     setCurrentSort,
     setCurrentFilter,
     filtredMovies,
+    addGenreId,
   } = props;
   const labelsElems = genres.map((label) => (
     <label htmlFor="filter" className="sidebar__label" key={label.id}>
-      <input type="checkbox" name={label.name} value="yes" id="filter" />
+      <input
+        onChange={(event) => addGenreId(event.target.name)}
+        type="checkbox"
+        name={label.name}
+        value="yes"
+        id="filter"
+      />
       <span>{label.name}</span>
     </label>
   ));

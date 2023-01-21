@@ -1,3 +1,17 @@
+const SELECTED_VALUE = {
+  popularDescending: 'popularDescending',
+  popularAscending: 'popularAscending',
+  ratingDescending: 'ratingDescending',
+  ratingAscending: 'ratingAscending',
+};
+const SELECTED_YEAR = {
+  any: 'any',
+  2020: 2020,
+  2019: 2019,
+  2018: 2018,
+  2017: 2017,
+};
+const PER_PAGE = 10;
 const genres = [
   {
     id: 28,
@@ -77,4 +91,4 @@ const genres = [
   },
 ];
 
-export default genres;
+export { genres, SELECTED_VALUE, SELECTED_YEAR, PER_PAGE };

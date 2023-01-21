@@ -2,9 +2,9 @@ import MovieCard from './MovieCard/MovieCard';
 import { Films } from '../../../additional/films';
 import './MovieList.css';
 
-function MovieList(props: { currentMovies: Films[] }) {
-  const { currentMovies } = props;
-  const renderMovieCards = currentMovies.map((obj: Films) => (
+function MovieList(props: { moviesForPage: Films[] }) {
+  const { moviesForPage } = props;
+  const renderMovieCards = moviesForPage.map((obj: Films) => (
     <MovieCard
       rating={obj.vote_average}
       title={obj.title}

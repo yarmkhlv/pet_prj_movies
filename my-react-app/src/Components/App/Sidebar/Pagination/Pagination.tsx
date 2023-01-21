@@ -1,12 +1,14 @@
-import films from '../../../../additional/films';
+import { Films } from '../../../../additional/films';
+import { PER_PAGE } from '../../../../additional/consts';
 import './Pagination.css';
 
 function Pagination(props: {
   currentPage: number;
   setCurrentPage: (a: number) => void;
+  filtredMovies: Films[];
 }) {
-  const { currentPage, setCurrentPage } = props;
-  const lastPage = Math.ceil(films.length / 10);
+  const { currentPage, setCurrentPage, filtredMovies } = props;
+  const lastPage = Math.ceil(filtredMovies.length / PER_PAGE);
   return (
     <div className="pagination">
       <div className="pagination__btns">

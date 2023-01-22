@@ -52,8 +52,11 @@ function App() {
           setCurrentPage={setCurrentPage}
           setCurrentSort={setCurrentSort}
           setCurrentFilter={setCurrentFilter}
+          setCurrentChecked={setCurrentChecked}
           filtredMovies={currentMovies.sortedFiltredChecked}
           addGenreId={addGenreId}
+          currentSort={currentSort}
+          currentFilter={currentFilter}
         />
         <MovieList moviesForPage={currentMovies.forPage} />
       </main>

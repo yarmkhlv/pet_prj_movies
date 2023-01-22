@@ -6,22 +6,30 @@ import {
 } from '../../../additional/consts';
 import Pagination from './Pagination/Pagination';
 import { Films } from '../../../additional/films';
+import ControlledSelect from './controlledSelect/ControlledSelect';
+import { OPTIONS_SORT, OPTIONS_YEAR } from '../../../additional/options';
 
 function Sidebar(props: {
   currentPage: number;
   setCurrentPage: (a: number) => void;
   setCurrentSort: (a: string) => void;
   setCurrentFilter: (a: string) => void;
+  setCurrentChecked: (a: []) => void;
   filtredMovies: Films[];
   addGenreId: (name: string) => void;
+  currentSort: string;
+  currentFilter: string;
 }) {
   const {
     currentPage,
     setCurrentPage,
     setCurrentSort,
     setCurrentFilter,
+    setCurrentChecked,
     filtredMovies,
     addGenreId,
+    currentSort,
+    currentFilter,
   } = props;
   const labelsElems = genres.map((label) => (
     <label htmlFor="filter" className="sidebar__label" key={label.id}>
@@ -35,39 +43,41 @@ function Sidebar(props: {
       <span>{label.name}</span>
     </label>
   ));
+  const returnDefault = () => {
+    setCurrentSort(SELECTED_VALUE.popularDescending);
+    setCurrentFilter(SELECTED_YEAR.any);
+    setCurrentChecked([]);
+  };
   return (
     <div className="sidebar">
       <h2 className="sidebar__text-filters">Фильтры:</h2>
-      <button type="button" className="sidebar__btn-reset">
+      <button
+        onClick={() => returnDefault()}
+        type="button"
+        className="sidebar__btn-reset"
+      >
         Сбросить все фильтры
       </button>
       <div>
         <p className="sidebar__text-el">Сортировать по:</p>
-        <select
-          onChange={(event) => setCurrentSort(event.target.value)}
-          className="sidebar__select"
+        <ControlledSelect
+          currentState={currentSort}
+          textForClass="sidebar__select"
+          handleChange={setCurrentSort}
           name="criterion"
-        >
-          <option
-            defaultValue={SELECTED_VALUE.popularDescending}
-            value="popularDescending"
-          >
-            Популярные по убыванию
-          </option>
-          <option value={SELECTED_VALUE.popularAscending}>
-            Популярные по возрастанию
-          </option>
-          <option value={SELECTED_VALUE.ratingDescending}>
-            Рейтинг по убыванию
-          </option>
-          <option value={SELECTED_VALUE.ratingAscending}>
-            Рейтинг по возрастанию
-          </option>
-        </select>
+          options={OPTIONS_SORT}
+        />
       </div>
       <div>
         <p className="sidebar__text-el">Год релиза:</p>
-        <select
+        <ControlledSelect
+          currentState={currentFilter}
+          textForClass="sidebar__select"
+          handleChange={setCurrentFilter}
+          name="releaseYear"
+          options={OPTIONS_YEAR}
+        />
+        {/* <select
           onChange={(event) => setCurrentFilter(event.target.value)}
           className="sidebar__select"
           name="releaseYear"
@@ -79,7 +89,7 @@ function Sidebar(props: {
           <option value={SELECTED_YEAR[2019]}>2019</option>
           <option value={SELECTED_YEAR[2018]}>2018</option>
           <option value={SELECTED_YEAR[2017]}>2017</option>
-        </select>
+        </select> */}
       </div>
       <div className="sidebar__labels-block">{labelsElems}</div>
       <Pagination

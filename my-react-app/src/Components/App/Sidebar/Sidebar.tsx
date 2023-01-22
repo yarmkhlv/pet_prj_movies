@@ -4,7 +4,7 @@ import {
   SELECTED_VALUE,
   SELECTED_YEAR,
 } from '../../../additional/consts';
-import Pagination from './Pagination/Pagination';
+import Pagination from './pagination/Pagination';
 import { Films } from '../../../additional/films';
 import ControlledSelect from './controlledSelect/ControlledSelect';
 import { OPTIONS_SORT, OPTIONS_YEAR } from '../../../additional/options';
@@ -19,6 +19,7 @@ function Sidebar(props: {
   addGenreId: (name: string) => void;
   currentSort: string;
   currentFilter: string;
+  currentChecked: number[];
 }) {
   const {
     currentPage,
@@ -30,15 +31,21 @@ function Sidebar(props: {
     addGenreId,
     currentSort,
     currentFilter,
+    currentChecked,
   } = props;
   const labelsElems = genres.map((label) => (
-    <label htmlFor="filter" className="sidebar__label" key={label.id}>
+    <label
+      htmlFor={`filter_${label.id}`}
+      className="sidebar__label"
+      key={label.id}
+    >
       <input
+        checked={currentChecked.includes(label.id)}
         onChange={(event) => addGenreId(event.target.name)}
         type="checkbox"
         name={label.name}
         value="yes"
-        id="filter"
+        id={`filter_${label.id}`}
       />
       <span>{label.name}</span>
     </label>
@@ -62,7 +69,7 @@ function Sidebar(props: {
         <p className="sidebar__text-el">Сортировать по:</p>
         <ControlledSelect
           currentState={currentSort}
-          textForClass="sidebar__select"
+          className="sidebar__select"
           handleChange={setCurrentSort}
           name="criterion"
           options={OPTIONS_SORT}
@@ -72,24 +79,11 @@ function Sidebar(props: {
         <p className="sidebar__text-el">Год релиза:</p>
         <ControlledSelect
           currentState={currentFilter}
-          textForClass="sidebar__select"
+          className="sidebar__select"
           handleChange={setCurrentFilter}
           name="releaseYear"
           options={OPTIONS_YEAR}
         />
-        {/* <select
-          onChange={(event) => setCurrentFilter(event.target.value)}
-          className="sidebar__select"
-          name="releaseYear"
-        >
-          <option defaultValue={SELECTED_YEAR.any} value={SELECTED_YEAR.any}>
-            Любой
-          </option>
-          <option value={SELECTED_YEAR[2020]}>2020</option>
-          <option value={SELECTED_YEAR[2019]}>2019</option>
-          <option value={SELECTED_YEAR[2018]}>2018</option>
-          <option value={SELECTED_YEAR[2017]}>2017</option>
-        </select> */}
       </div>
       <div className="sidebar__labels-block">{labelsElems}</div>
       <Pagination

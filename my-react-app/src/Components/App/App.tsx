@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import Header from './Header/Header';
-import MovieList from './MovieList/MovieList';
-import Sidebar from './Sidebar/Sidebar';
+import { useEffect, useState } from 'react';
+import Header from './header/Header';
+import MovieList from './movieList/MovieList';
 import './App.css';
+import Sidebar from './sidebar/Sidebar';
 import films from '../../additional/films';
 import getMovies from '../../additional/getMovies';
 import {
@@ -57,6 +57,7 @@ function App() {
           addGenreId={addGenreId}
           currentSort={currentSort}
           currentFilter={currentFilter}
+          currentChecked={currentChecked}
         />
         <MovieList moviesForPage={currentMovies.forPage} />
       </main>

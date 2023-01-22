@@ -15,6 +15,9 @@ function Pagination(props: {
   useEffect(() => {
     setLastPage(Math.ceil(filtredMovies.length / PER_PAGE));
   }, [filtredMovies]);
+  useEffect(() => {
+    if (currentPage > lastPage) setCurrentPage(lastPage);
+  }, [lastPage]);
   return (
     <div className="pagination">
       <div className="pagination__btns">

@@ -6,7 +6,7 @@ import {
 } from '../../../additional/consts';
 import Pagination from './pagination/Pagination';
 import { Films } from '../../../additional/films';
-import ControlledSelect from './controlledSelect/ControlledSelect';
+import ControlledSelect from './controlled_select/controlled_select';
 import { OPTIONS_SORT, OPTIONS_YEAR } from '../../../additional/options';
 
 function Sidebar(props: {

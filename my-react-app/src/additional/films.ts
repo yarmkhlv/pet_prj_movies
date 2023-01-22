@@ -1,4 +1,4 @@
-export type Films = {
+type Films = {
   adult: boolean;
   backdrop_path: string | null;
   genre_ids: number[];
@@ -4063,4 +4063,5 @@ const films: Films[] = [
   },
 ];
 
-export default films;
+export { films };
+export type { Films };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Header from './header/Header';
-import MovieList from './movieList/MovieList';
+import Header from './header/header';
+import MovieList from './movie_list/movie_list';
 import './App.css';
 import Sidebar from './sidebar/Sidebar';
 import films from '../../additional/films';

@@ -1,4 +1,4 @@
-import MovieCard from './movieCard/MovieCard';
+import MovieCard from './movie_card/movie_card';
 import { Films } from '../../../additional/films';
 import './MovieList.css';
 

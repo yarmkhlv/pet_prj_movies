@@ -1,10 +1,25 @@
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import MovieCard from './movie_card/movie_card';
 import { Films } from '../../../additional/films';
 import './MovieList.css';
+import { Store } from '../../../additional/store';
+import { PER_PAGE } from '../../../additional/consts';
+import { showMoviesPerPage } from '../../../additional/functions/show_movies_per_page';
 
-function MovieList(props: { moviesForPage: Films[] }) {
-  const { moviesForPage } = props;
-  const renderMovieCards = moviesForPage.map((obj: Films) => (
+function MovieList() {
+  const { currentMovies, currentPage } = useSelector((store: Store) => store);
+
+  const boundMoviesPerPage = () =>
+    showMoviesPerPage(currentMovies, currentPage, PER_PAGE);
+
+  const [moviesPerPage, setMoviesPerPage] = useState(boundMoviesPerPage());
+
+  useEffect(() => {
+    setMoviesPerPage(boundMoviesPerPage());
+  }, [currentPage, currentMovies]);
+
+  const renderMovieCards = moviesPerPage.map((obj: Films) => (
     <MovieCard
       rating={obj.vote_average}
       title={obj.title}

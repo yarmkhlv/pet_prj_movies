@@ -10,13 +10,13 @@ export type Option = {
 const OPTIONS_SORT: Option[] = [
   {
     value: SELECTED_VALUE.popularDescending,
-    label: 'Популярные по возрастанию',
+    label: 'Популярные по убыванию',
     id: 1,
     default: true,
   },
   {
     value: SELECTED_VALUE.popularAscending,
-    label: 'Популярные по убыванию',
+    label: 'Популярные по возрастанию',
     id: 2,
     default: false,
   },

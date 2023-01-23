@@ -13,7 +13,7 @@ const SELECTED_YEAR = {
 };
 const PER_PAGE = 10;
 
-export type Genre = {
+type Genre = {
   id: number;
   name: string;
 };
@@ -98,3 +98,4 @@ const genres = [
 ];
 
 export { genres, SELECTED_VALUE, SELECTED_YEAR, PER_PAGE };
+export type { Genre };

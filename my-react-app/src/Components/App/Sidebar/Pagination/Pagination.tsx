@@ -1,29 +1,30 @@
 import { useEffect, useState } from 'react';
-import { Films } from '../../../../additional/films';
+import { useSelector, useDispatch } from 'react-redux';
+import { Store } from '../../../../additional/store';
+import { updCurrentPage } from '../../../../additional/actions';
 import { PER_PAGE } from '../../../../additional/consts';
 import './Pagination.css';
 
-function Pagination(props: {
-  currentPage: number;
-  setCurrentPage: (a: number) => void;
-  filtredMovies: Films[];
-}) {
-  const { currentPage, setCurrentPage, filtredMovies } = props;
+function Pagination() {
+  const currentPage = useSelector((store: Store) => store.currentPage);
+  const currentMovies = useSelector((store: Store) => store.currentMovies);
+  const dispatch = useDispatch();
   const [lastPage, setLastPage] = useState(
-    Math.ceil(filtredMovies.length / PER_PAGE)
+    Math.ceil(currentMovies.length / PER_PAGE)
   );
   useEffect(() => {
-    setLastPage(Math.ceil(filtredMovies.length / PER_PAGE));
-  }, [filtredMovies]);
+    setLastPage(Math.ceil(currentMovies.length / PER_PAGE));
+  }, [currentMovies]);
   useEffect(() => {
-    if (currentPage > lastPage) setCurrentPage(lastPage);
+    if (currentPage > lastPage) dispatch(updCurrentPage(lastPage));
+    if (currentPage <= 0) dispatch(updCurrentPage(1));
   }, [lastPage]);
   return (
     <div className="pagination">
       <div className="pagination__btns">
         {currentPage > 1 ? (
           <button
-            onClick={() => setCurrentPage(currentPage - 1)}
+            onClick={() => dispatch(updCurrentPage(currentPage - 1))}
             type="button"
             className="pagination__btns-el"
           >
@@ -32,7 +33,7 @@ function Pagination(props: {
         ) : null}
         {currentPage === lastPage ? null : (
           <button
-            onClick={() => setCurrentPage(currentPage + 1)}
+            onClick={() => dispatch(updCurrentPage(currentPage + 1))}
             type="button"
             className="pagination__btns-el"
           >

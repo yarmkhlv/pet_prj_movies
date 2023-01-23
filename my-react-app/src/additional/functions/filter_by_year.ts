@@ -3,13 +3,13 @@ import { Films } from '../films';
 
 const getYear = (date: string) => new Date(date).getFullYear();
 
-function filterByYear(arr: Films[], filter: string) {
-  if (filter !== SELECTED_YEAR.any) {
-    return arr.filter(
-      (movie: Films) => getYear(movie.release_date) === Number(filter)
+function filterByYear(movies: Films[], year: string) {
+  if (year !== SELECTED_YEAR.any) {
+    return movies.filter(
+      (movie: Films) => getYear(movie.release_date) === Number(year)
     );
   }
-  return arr;
+  return movies;
 }
 
 export { filterByYear };

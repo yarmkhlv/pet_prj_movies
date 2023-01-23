@@ -1,38 +1,39 @@
+import { useDispatch, useSelector } from 'react-redux';
 import './Sidebar.css';
-import {
-  genres,
-  SELECTED_VALUE,
-  SELECTED_YEAR,
-} from '../../../additional/consts';
-import Pagination from './pagination/Pagination';
-import { Films } from '../../../additional/films';
+import { genres } from '../../../additional/consts';
+import Pagination from './pagination/pagination';
 import ControlledSelect from './controlled_select/controlled_select';
 import { OPTIONS_SORT, OPTIONS_YEAR } from '../../../additional/options';
+import {
+  updSelectedGenres,
+  resetSelectedGenres,
+  deleteUnselGenres,
+  updSort,
+  updYearFilter,
+  resetSort,
+  resetYearFilter,
+} from '../../../additional/actions';
+import { Store } from '../../../additional/store';
+import getIdFromGenres from '../../../additional/getIdFromGenres';
 
-function Sidebar(props: {
-  currentPage: number;
-  setCurrentPage: (a: number) => void;
-  setCurrentSort: (a: string) => void;
-  setCurrentFilter: (a: string) => void;
-  setCurrentChecked: (a: []) => void;
-  filtredMovies: Films[];
-  addGenreId: (name: string) => void;
-  currentSort: string;
-  currentFilter: string;
-  currentChecked: number[];
-}) {
-  const {
-    currentPage,
-    setCurrentPage,
-    setCurrentSort,
-    setCurrentFilter,
-    setCurrentChecked,
-    filtredMovies,
-    addGenreId,
-    currentSort,
-    currentFilter,
-    currentChecked,
-  } = props;
+function Sidebar() {
+  const { sort, yearFilter, selectedGenres } = useSelector(
+    (store: Store) => store
+  );
+  const dispatch = useDispatch();
+  const boundUpdSort = (value: string) => dispatch(updSort(value));
+  const boundUpdYearFilter = (value: string) => dispatch(updYearFilter(value));
+
+  const addGenreId = (name: string) => {
+    const id: number | null = getIdFromGenres(name);
+    if (id) {
+      if (selectedGenres.find((genreId) => genreId === id)) {
+        const filteredId = selectedGenres.filter((genreId) => genreId !== id);
+        dispatch(deleteUnselGenres([...filteredId]));
+      } else dispatch(updSelectedGenres(id));
+    }
+  };
+
   const labelsElems = genres.map((label) => (
     <label
       htmlFor={`filter_${label.id}`}
@@ -40,7 +41,7 @@ function Sidebar(props: {
       key={label.id}
     >
       <input
-        checked={currentChecked.includes(label.id)}
+        checked={selectedGenres.includes(label.id)}
         onChange={(event) => addGenreId(event.target.name)}
         type="checkbox"
         name={label.name}
@@ -51,9 +52,9 @@ function Sidebar(props: {
     </label>
   ));
   const returnDefault = () => {
-    setCurrentSort(SELECTED_VALUE.popularDescending);
-    setCurrentFilter(SELECTED_YEAR.any);
-    setCurrentChecked([]);
+    dispatch(resetSort());
+    dispatch(resetYearFilter());
+    dispatch(resetSelectedGenres());
   };
   return (
     <div className="sidebar">
@@ -68,9 +69,9 @@ function Sidebar(props: {
       <div>
         <p className="sidebar__text-el">Сортировать по:</p>
         <ControlledSelect
-          currentState={currentSort}
+          currentState={sort}
           className="sidebar__select"
-          handleChange={setCurrentSort}
+          handleChange={boundUpdSort}
           name="criterion"
           options={OPTIONS_SORT}
         />
@@ -78,19 +79,15 @@ function Sidebar(props: {
       <div>
         <p className="sidebar__text-el">Год релиза:</p>
         <ControlledSelect
-          currentState={currentFilter}
+          currentState={yearFilter}
           className="sidebar__select"
-          handleChange={setCurrentFilter}
+          handleChange={boundUpdYearFilter}
           name="releaseYear"
           options={OPTIONS_YEAR}
         />
       </div>
       <div className="sidebar__labels-block">{labelsElems}</div>
-      <Pagination
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        filtredMovies={filtredMovies}
-      />
+      <Pagination />
     </div>
   );
 }

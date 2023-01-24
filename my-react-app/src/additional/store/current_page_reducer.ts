@@ -1,4 +1,4 @@
-import { ACT_TYPES } from '../actions';
+import { ACT_TYPES } from '../consts/actions';
 const defaultState = 1;
 
 const currentPageReducer = (

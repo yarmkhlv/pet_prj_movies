@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Store } from '../../additional/store';
 import Header from './header/header';
 import MovieList from './movie_list/movie_list';
-import './App.css';
+import './app.css';
 import Sidebar from './sidebar/sidebar';
-import { updCurrentMovies } from '../../additional/actions';
-import { filterMovies } from '../../additional/filterMovies';
-import { films } from '../../additional/films';
+import { updCurrentMovies } from '../../additional/consts/actions';
+import { filterMovies } from '../../additional/functions/filterMovies';
+import { films } from '../../additional/consts/films';
 import { sortBy } from '../../additional/functions/sort_by';
 
 function App() {

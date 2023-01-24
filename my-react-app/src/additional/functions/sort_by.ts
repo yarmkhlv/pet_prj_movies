@@ -1,5 +1,5 @@
-import { SELECTED_VALUE } from '../consts';
-import { Films } from '../films';
+import { SELECTED_VALUE } from '../consts/other';
+import { Films } from '../consts/films';
 
 function sortBy(movies: Films[], sort: string) {
   switch (sort) {

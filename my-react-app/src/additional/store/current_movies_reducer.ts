@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/default-param-last */
-import { films, Films } from '../films';
-import { ACT_TYPES } from '../actions';
+import { films, Films } from '../consts/films';
+import { ACT_TYPES } from '../consts/actions';
 
 const defaultState: Films[] = films;
 

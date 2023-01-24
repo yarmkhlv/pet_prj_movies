@@ -1,4 +1,4 @@
-import { Films } from '../films';
+import { Films } from '../consts/films';
 
 function showMoviesPerPage(
   arr: Films[],

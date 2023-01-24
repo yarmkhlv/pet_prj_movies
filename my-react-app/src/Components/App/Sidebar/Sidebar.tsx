@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import './Sidebar.css';
-import { genres } from '../../../additional/consts';
+import './sidebar.css';
+import { genres } from '../../../additional/consts/other';
 import Pagination from './pagination/pagination';
 import ControlledSelect from './controlled_select/controlled_select';
-import { OPTIONS_SORT, OPTIONS_YEAR } from '../../../additional/options';
+import { OPTIONS_SORT, OPTIONS_YEAR } from '../../../additional/consts/options';
 import {
   updSelectedGenres,
   resetSelectedGenres,
@@ -12,9 +12,9 @@ import {
   updYearFilter,
   resetSort,
   resetYearFilter,
-} from '../../../additional/actions';
+} from '../../../additional/consts/actions';
 import { Store } from '../../../additional/store';
-import getIdFromGenres from '../../../additional/getIdFromGenres';
+import getIdFromGenres from '../../../additional/functions/getIdFromGenres';
 
 function Sidebar() {
   const { sort, yearFilter, selectedGenres } = useSelector(

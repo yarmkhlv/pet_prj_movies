@@ -4,7 +4,7 @@ import { currentPageReducer } from './current_page_reducer';
 import { selectedGenresReducer } from './selected_genres_reducer';
 import { yearFilterReducer } from './year_filter_reducer';
 import { sortReducer } from './sort_reducer';
-import { Films } from '../films';
+import { Films } from '../consts/films';
 
 type Store = {
   currentMovies: Films[];

@@ -1,5 +1,5 @@
-import { SELECTED_YEAR } from '../consts';
-import { Films } from '../films';
+import { SELECTED_YEAR } from '../consts/other';
+import { Films } from '../consts/films';
 
 const getYear = (date: string) => new Date(date).getFullYear();
 

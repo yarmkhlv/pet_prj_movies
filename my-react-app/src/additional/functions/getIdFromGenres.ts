@@ -1,4 +1,4 @@
-import { genres, Genre } from './consts';
+import { genres, Genre } from '../consts/other';
 
 const getIdFromGenres = (name: string) => {
   const findedGenre = genres.find((genre: Genre) => genre.name === name);

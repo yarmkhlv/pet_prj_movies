@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Store } from '../../../../additional/store';
-import { updCurrentPage } from '../../../../additional/actions';
-import { PER_PAGE } from '../../../../additional/consts';
-import './Pagination.css';
+import { updCurrentPage } from '../../../../additional/consts/actions';
+import { PER_PAGE } from '../../../../additional/consts/other';
+import './pagination.css';
 
 function Pagination() {
   const currentPage = useSelector((store: Store) => store.currentPage);

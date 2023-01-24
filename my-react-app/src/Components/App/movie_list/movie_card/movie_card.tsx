@@ -1,4 +1,4 @@
-import './MovieCard.css';
+import './movie_card.css';
 
 function MovieCard(props: {
   rating: number;

@@ -1,4 +1,4 @@
-import { SELECTED_VALUE, SELECTED_YEAR } from './consts';
+import { SELECTED_VALUE, SELECTED_YEAR } from './other';
 
 export type Option = {
   value: string | number;

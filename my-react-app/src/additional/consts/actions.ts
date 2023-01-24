@@ -1,4 +1,4 @@
-import { actionCreator, actionResetCreator } from './functions/action_creator';
+import { actionCreator, actionResetCreator } from '../functions/action_creator';
 
 const ACT_TYPES = {
   UPD_CURRENT_MOVIES: 'UPD_CURRENT_MOVIES',

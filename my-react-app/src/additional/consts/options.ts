@@ -1,4 +1,4 @@
-import { SELECTED_VALUE, SELECTED_YEAR } from './other';
+import { SELECTED_VALUE, SELECTED_YEAR, SELECTED_QUICK } from './other';
 
 export type Option = {
   value: string | number;
@@ -6,6 +6,27 @@ export type Option = {
   id: number;
   default: boolean;
 };
+
+const OPTIONS_QUICK: Option[] = [
+  {
+    value: SELECTED_QUICK.choose,
+    label: 'Выбрать',
+    id: 1,
+    default: true,
+  },
+  {
+    value: SELECTED_QUICK.favorite,
+    label: 'Избранные',
+    id: 2,
+    default: false,
+  },
+  {
+    value: SELECTED_QUICK.postpone,
+    label: 'Отложенные',
+    id: 3,
+    default: false,
+  },
+];
 
 const OPTIONS_SORT: Option[] = [
   {
@@ -67,4 +88,4 @@ const OPTIONS_YEAR: Option[] = [
   },
 ];
 
-export { OPTIONS_SORT, OPTIONS_YEAR };
+export { OPTIONS_SORT, OPTIONS_YEAR, OPTIONS_QUICK };

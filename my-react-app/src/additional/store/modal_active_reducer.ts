@@ -1,17 +1,17 @@
 import { ACT_TYPES } from '../consts/actions';
 
-const defaultState = 1;
+const defaultState = false;
 
-const currentPageReducer = (
+const modalActiveReducer = (
   state = defaultState,
-  action: { type: string; payload: object }
+  action: { type: string; payload: boolean }
 ) => {
   switch (action.type) {
-    case ACT_TYPES.UPD_CURRENT_PAGE:
+    case ACT_TYPES.UPD_MODAL_ACTIVE:
       return action.payload;
     default:
       return state;
   }
 };
 
-export { currentPageReducer };
+export { modalActiveReducer };

@@ -3,7 +3,11 @@ import './sidebar.css';
 import { genres } from '../../../additional/consts/other';
 import Pagination from './pagination/pagination';
 import ControlledSelect from './controlled_select/controlled_select';
-import { OPTIONS_SORT, OPTIONS_YEAR } from '../../../additional/consts/options';
+import {
+  OPTIONS_QUICK,
+  OPTIONS_SORT,
+  OPTIONS_YEAR,
+} from '../../../additional/consts/options';
 import {
   updSelectedGenres,
   resetSelectedGenres,
@@ -12,17 +16,19 @@ import {
   updYearFilter,
   resetSort,
   resetYearFilter,
+  updQuickFilter,
 } from '../../../additional/consts/actions';
 import { Store } from '../../../additional/store';
-import getIdFromGenres from '../../../additional/functions/getIdFromGenres';
+import getIdFromGenres from '../../../additional/functions/get_id_from_genres';
 
 function Sidebar() {
-  const { sort, yearFilter, selectedGenres } = useSelector(
-    (store: Store) => store
-  );
+  const { sort, yearFilter, selectedGenres, userAuth, quickFilter } =
+    useSelector((store: Store) => store);
   const dispatch = useDispatch();
   const boundUpdSort = (value: string) => dispatch(updSort(value));
   const boundUpdYearFilter = (value: string) => dispatch(updYearFilter(value));
+  const boundUpdQuickFilter = (value: string) =>
+    dispatch(updQuickFilter(value));
 
   const addGenreId = (name: string) => {
     const id: number | null = getIdFromGenres(name);
@@ -86,6 +92,18 @@ function Sidebar() {
           options={OPTIONS_YEAR}
         />
       </div>
+      {userAuth ? (
+        <div>
+          <p className="sidebar__text-el">Быстрый доступ:</p>
+          <ControlledSelect
+            currentState={quickFilter}
+            className="sidebar__select"
+            handleChange={boundUpdQuickFilter}
+            name="quickAccess"
+            options={OPTIONS_QUICK}
+          />
+        </div>
+      ) : null}
       <div className="sidebar__labels-block">{labelsElems}</div>
       <Pagination />
     </div>

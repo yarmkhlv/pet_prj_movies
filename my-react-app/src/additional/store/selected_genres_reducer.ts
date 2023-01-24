@@ -1,4 +1,5 @@
 import { ACT_TYPES } from '../consts/actions';
+
 const defaultState: number[] = [];
 
 const selectedGenresReducer = (

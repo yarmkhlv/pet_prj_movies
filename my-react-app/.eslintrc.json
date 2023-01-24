@@ -32,11 +32,5 @@
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
-  },
-  "module-exports": {
-    "rules": {
-      "default-param-last": "off",
-      "@typescript-eslint/default-param-last": "warn"
-    }
   }
 }

@@ -19,14 +19,8 @@ function MovieList() {
     setMoviesPerPage(boundMoviesPerPage());
   }, [currentPage, currentMovies]);
 
-  const renderMovieCards = moviesPerPage.map((obj: Films) => (
-    <MovieCard
-      rating={obj.vote_average}
-      title={obj.title}
-      key={obj.id}
-      path={obj.poster_path}
-      backdropPath={obj.backdrop_path}
-    />
+  const renderMovieCards = moviesPerPage.map((movie: Films) => (
+    <MovieCard movie={movie} key={movie.id} />
   ));
 
   return <div className="movieList">{renderMovieCards}</div>;

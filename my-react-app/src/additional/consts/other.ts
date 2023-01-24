@@ -13,6 +13,12 @@ const SELECTED_YEAR = {
 };
 const PER_PAGE = 10;
 
+const SELECTED_QUICK = {
+  choose: 'choose',
+  favorite: 'favorite',
+  postpone: 'postpone',
+};
+
 type Genre = {
   id: number;
   name: string;
@@ -97,5 +103,5 @@ const genres = [
   },
 ];
 
-export { genres, SELECTED_VALUE, SELECTED_YEAR, PER_PAGE };
+export { genres, SELECTED_VALUE, SELECTED_YEAR, PER_PAGE, SELECTED_QUICK };
 export type { Genre };

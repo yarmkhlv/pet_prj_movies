@@ -7,11 +7,17 @@
   justify-content: space-between;
 }
 
-.header__text-home {
+.header__link-home {
   margin-left: 25px;
   color: #efeff1;
+  text-decoration: none;
 }
-
+.header__link-home:visited {
+  color: #efeff1;
+}
+.header__link-home:hover {
+  text-decoration: underline;
+}
 .header__btn-login {
   margin-right: 50px;
   width: 60px;

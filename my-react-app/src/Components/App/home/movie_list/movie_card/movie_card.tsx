@@ -1,14 +1,16 @@
 import './movie_card.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { Films } from '../../../../additional/consts/films';
+import { Link } from 'react-router-dom';
+import { Films } from '../../../../../additional/consts/films';
 import {
   updFavorMovies,
   updBookmarkMovies,
   deleteBookmarkMovies,
   deleteFavorMovies,
   updModalActive,
-} from '../../../../additional/consts/actions';
-import { Store } from '../../../../additional/store';
+  updMovieDetails,
+} from '../../../../../additional/consts/actions';
+import { Store } from '../../../../../additional/store';
 
 function MovieCard(props: { movie: Films }) {
   const { movie } = props;
@@ -24,6 +26,10 @@ function MovieCard(props: { movie: Films }) {
   const imagePath = `https://image.tmdb.org/t/p/w500/${
     movie.poster_path || movie.backdrop_path
   }`;
+
+  const boundUpdMovieDetails = () => {
+    dispatch(updMovieDetails(movie));
+  };
 
   const boundFavorite = () => {
     if (userAuth) {
@@ -70,6 +76,15 @@ function MovieCard(props: { movie: Films }) {
           />
         </div>
         <div className="movieCard__poster-title">{movie.title}</div>
+        <div className="movieCard__poster__cont-link">
+          <Link
+            onClick={boundUpdMovieDetails}
+            className="movieCard__poster__link"
+            to="/movie-details"
+          >
+            Подробнее
+          </Link>
+        </div>
       </div>
     </div>
   );

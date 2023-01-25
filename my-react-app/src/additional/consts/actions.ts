@@ -20,6 +20,7 @@ const ACT_TYPES = {
   RESET_QUICK_FILTER: 'RESET_QUICK_FILTER',
   CLEAR_FAVOR_MOVIES: 'CLEAR_FAVOR_MOVIES',
   CLEAR_BOOKMARK_MOVIES: 'CLEAR_BOOKMARK_MOVIES',
+  UPD_MOVIE_DETAILS: 'UPD_MOVIE_DETAILS',
 };
 
 const updCurrentMovies = actionCreator(ACT_TYPES.UPD_CURRENT_MOVIES);
@@ -35,6 +36,7 @@ const updBookmarkMovies = actionCreator(ACT_TYPES.UPD_BOOKMARK_MOVIES);
 const deleteFavorMovies = actionCreator(ACT_TYPES.DELETE_FAVOR_MOVIES);
 const deleteBookmarkMovies = actionCreator(ACT_TYPES.DELETE_BOOKMARK_MOVIES);
 const updQuickFilter = actionCreator(ACT_TYPES.UPD_QUICK_FILTER);
+const updMovieDetails = actionCreator(ACT_TYPES.UPD_MOVIE_DETAILS);
 
 const resetSelectedGenres = actionResetCreator(ACT_TYPES.RESET_SELECTED_GENRES);
 const resetSort = actionResetCreator(ACT_TYPES.RESET_SORT);
@@ -64,4 +66,5 @@ export {
   resetQuickFilter,
   clearFavorMovies,
   clearBookmarkMovies,
+  updMovieDetails,
 };

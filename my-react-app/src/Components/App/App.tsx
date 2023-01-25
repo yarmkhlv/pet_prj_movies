@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
 import { Store } from '../../additional/store';
 import Header from './header/header';
-import MovieList from './movie_list/movie_list';
 import './app.css';
-import Sidebar from './sidebar/sidebar';
+import { Home } from './home/home';
+import { MovieDetails } from './movie_details/movie_details';
 import { updCurrentMovies } from '../../additional/consts/actions';
 import { filterMovies } from '../../additional/functions/filter_movies';
 import { films } from '../../additional/consts/films';
@@ -62,8 +63,10 @@ function App() {
     <div className="App">
       <Header />
       <main className="main">
-        <Sidebar />
-        <MovieList />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie-details" element={<MovieDetails />} />
+        </Routes>
       </main>
       {modalActive ? <Modal /> : null}
     </div>

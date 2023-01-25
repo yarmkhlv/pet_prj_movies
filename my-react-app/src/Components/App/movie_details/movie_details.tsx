@@ -1,0 +1,54 @@
+import { useSelector } from 'react-redux';
+import { Store } from '../../../additional/store';
+import './movie_details.css';
+
+function MovieDetails() {
+  const details = useSelector((store: Store) => store.movieDetails);
+
+  const imagePath = `https://image.tmdb.org/t/p/w500/${
+    details.poster_path || details.backdrop_path
+  }`;
+
+  const released =
+    Date.now() - new Date(details.release_date).getTime() > 0
+      ? 'Выпущен'
+      : 'Не выпущен';
+
+  return (
+    <div className="movie-details">
+      <div className="movie-details__container-img">
+        <img className="movie-details__img" src={imagePath} alt="poster" />
+      </div>
+      <div className="movie-details__short">
+        <h2 className="short__header">{details.title}</h2>
+        <p className="short__rating">Рейтинг: {details.vote_average}</p>
+        <p className="short__text">{details.overview}</p>
+        <div className="movie-details__info">
+          <div className="movie-details__info__buttons">
+            <button className="info__button_elem active" type="button">
+              Детали
+            </button>
+            <button className="info__button_elem" type="button">
+              Видео
+            </button>
+            <button className="info__button_elem" type="button">
+              Актеры
+            </button>
+          </div>
+          <div className="movie-details__info-details">
+            <ul>
+              <li>Статус : {released}</li>
+              <li>Дата выхода : {details.release_date}</li>
+              <li>Продолжительность</li>
+              <li>Язык оригинала : {details.original_language}</li>
+              <li>Страна</li>
+              <li>Бюджет</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export { MovieDetails };

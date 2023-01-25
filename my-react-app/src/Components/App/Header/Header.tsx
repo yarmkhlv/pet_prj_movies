@@ -1,5 +1,6 @@
 import './header.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Store } from '../../../additional/store';
 import {
   updModalActive,
@@ -32,7 +33,9 @@ function Header() {
 
   return (
     <header className="header">
-      <span className="header__text-home">Home</span>
+      <Link className="header__link-home" to="/">
+        Home
+      </Link>
       {userAuth ? (
         <button onClick={boundExit} type="button" className="header__btn-login">
           Выйти

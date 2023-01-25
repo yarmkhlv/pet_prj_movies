@@ -86,67 +86,36 @@
   width: 200px;
   height: 80px;
   position: absolute;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: white;
   left: 10px;
-  top: 220px;
+  top: 200px;
   display: flex;
   align-items: center;
   justify-content: start;
 }
-/* 
-.movieCard__info {
-  display: flex;
-  justify-content: space-between;
-  height: 50px;
-  padding: 10px 10px;
-}
-.movieCard__info-rating p {
-  display: inline-block;
-  color: white;
-  font-weight: 800;
-}
-.movieCard__info-btns {
-  width: 60px;
+
+.movieCard__poster__cont-link {
+  width: 100px;
   height: 25px;
   background-color: #18181b;
+  border: 1px solid #9147ff;
   border-radius: 10px;
-  padding: 0 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.info-btns__favorites {
-  width: 15px;
-  height: 15px;
-  background-image: url('../../../src/assets/icon-favor.png');
-  background-repeat: no-repeat;
-  background-color: #18181b;
-  background-position: center center;
-  background-size: cover;
-  border: none;
-}
-
-.info-btns__postpone {
-  width: 15px;
-  height: 15px;
-  background-image: url('../../../src/assets/icon-post.png');
-  background-repeat: no-repeat;
-  background-color: #18181b;
-  background-position: center center;
-  background-size: cover;
-  border: none;
-}
-
-.movieCard__text-name {
-  width: 200px;
-  height: 80px;
+  z-index: 1;
   position: absolute;
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-  left: 10px;
-  top: 220px;
-} */
+  bottom: 30px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.movieCard__poster__link {
+  color: #efeff1;
+}
+.movieCard__poster__link:visited {
+  color: #efeff1;
+}
+.movieCard__poster__link:hover {
+  text-decoration: underline;
+}

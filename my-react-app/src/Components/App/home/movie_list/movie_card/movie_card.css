@@ -109,6 +109,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #efeff1;
 }
 .movieCard__poster__link {
   color: #efeff1;

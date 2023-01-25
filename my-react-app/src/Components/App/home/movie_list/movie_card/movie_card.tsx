@@ -8,7 +8,6 @@ import {
   deleteBookmarkMovies,
   deleteFavorMovies,
   updModalActive,
-  updMovieDetails,
 } from '../../../../../additional/consts/actions';
 import { Store } from '../../../../../additional/store';
 
@@ -26,10 +25,6 @@ function MovieCard(props: { movie: Films }) {
   const imagePath = `https://image.tmdb.org/t/p/w500/${
     movie.poster_path || movie.backdrop_path
   }`;
-
-  const boundUpdMovieDetails = () => {
-    dispatch(updMovieDetails(movie));
-  };
 
   const boundFavorite = () => {
     if (userAuth) {
@@ -78,9 +73,8 @@ function MovieCard(props: { movie: Films }) {
         <div className="movieCard__poster-title">{movie.title}</div>
         <div className="movieCard__poster__cont-link">
           <Link
-            onClick={boundUpdMovieDetails}
             className="movieCard__poster__link"
-            to="/movie-details"
+            to={`/movie-details/${movie.id}`}
           >
             Подробнее
           </Link>

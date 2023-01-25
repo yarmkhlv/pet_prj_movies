@@ -10,11 +10,9 @@ import { userAuthReducer } from './user_auth_reducer';
 import { favorMoviesReducer } from './favor_movies_reducer';
 import { bookmarkMoviesReducer } from './bookmark_movies_reducer';
 import { quickFilterReducer } from './quick_filter_reducer';
-import { movieDetailsReducer } from './movie_details_reducer';
 
 type Store = {
   currentMovies: Films[];
-  movieDetails: Films;
   currentPage: number;
   selectedGenres: number[];
   yearFilter: string;
@@ -28,7 +26,6 @@ type Store = {
 
 const rootReducer = combineReducers({
   currentMovies: currentMoviesReducer,
-  movieDetails: movieDetailsReducer,
   currentPage: currentPageReducer,
   selectedGenres: selectedGenresReducer,
   yearFilter: yearFilterReducer,

@@ -65,7 +65,7 @@ function App() {
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie-details" element={<MovieDetails />} />
+          <Route path="/movie-details/:movieId" element={<MovieDetails />} />
         </Routes>
       </main>
       {modalActive ? <Modal /> : null}

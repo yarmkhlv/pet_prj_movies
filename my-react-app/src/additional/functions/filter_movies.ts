@@ -21,12 +21,6 @@ const filterMovies = (
     const sortedFiltred = sortBy(filteredGenreYear, sort);
     return sortedFiltred;
   }
-  if (movies.length < 1) {
-    const filteredYear = filterByYear(films, year);
-    const filteredGenreYear = filterByGenre(filteredYear, genres);
-    const sortedFiltred = sortBy(filteredGenreYear, sort);
-    return sortedFiltred;
-  }
   const filteredYear = filterByYear(movies, year);
   const filteredGenreYear = filterByGenre(filteredYear, genres);
   const sortedFiltred = sortBy(filteredGenreYear, sort);

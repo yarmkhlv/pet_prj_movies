@@ -36,6 +36,9 @@ function Header() {
       <Link className="header__link-home" to="/">
         Home
       </Link>
+      <Link className="header__link-home" to="/search">
+        Search
+      </Link>
       {userAuth ? (
         <button onClick={boundExit} type="button" className="header__btn-login">
           Выйти

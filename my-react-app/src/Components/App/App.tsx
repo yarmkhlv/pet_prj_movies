@@ -11,6 +11,7 @@ import { filterMovies } from '../../additional/functions/filter_movies';
 import { films } from '../../additional/consts/films';
 import { sortBy } from '../../additional/functions/sort_by';
 import { Modal } from './modal/modal';
+import { Search } from './search/search';
 
 function App() {
   const {
@@ -66,6 +67,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie-details/:movieId" element={<MovieDetails />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </main>
       {modalActive ? <Modal /> : null}

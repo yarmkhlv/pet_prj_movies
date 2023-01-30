@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import MovieCard from './movie_card/movie_card';
 import { Films } from '../../../../additional/consts/films';
@@ -10,18 +10,21 @@ import { showMoviesPerPage } from '../../../../additional/functions/show_movies_
 function MovieList() {
   const { currentMovies, currentPage } = useSelector((store: Store) => store);
 
-  const boundMoviesPerPage = () =>
-    showMoviesPerPage(currentMovies, currentPage, PER_PAGE);
-
-  const [moviesPerPage, setMoviesPerPage] = useState(boundMoviesPerPage());
+  const [moviesPerPage, setMoviesPerPage] = useState(
+    showMoviesPerPage(currentMovies, currentPage, PER_PAGE)
+  );
 
   useEffect(() => {
-    setMoviesPerPage(boundMoviesPerPage());
+    setMoviesPerPage(showMoviesPerPage(currentMovies, currentPage, PER_PAGE));
   }, [currentPage, currentMovies]);
 
-  const renderMovieCards = moviesPerPage.map((movie: Films) => (
-    <MovieCard movie={movie} key={movie.id} />
-  ));
+  const renderMovieCards = useMemo(
+    () =>
+      moviesPerPage.map((movie: Films) => (
+        <MovieCard movie={movie} key={movie.id} />
+      )),
+    [moviesPerPage]
+  );
 
   return <div className="movieList">{renderMovieCards}</div>;
 }

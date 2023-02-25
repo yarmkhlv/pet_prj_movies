@@ -1,3 +1,3 @@
 # Movie site
-## Skills
-**Typescript, React, Redux**
+## Main skills
+**TYPESCRIPT, REACT, REDUX**

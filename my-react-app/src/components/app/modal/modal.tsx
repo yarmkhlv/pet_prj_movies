@@ -56,6 +56,7 @@ function Modal() {
           <button className="content__form-btn" type="submit">
             Войти
           </button>
+          <p>Логин : admin ; пароль : 123</p>
         </form>
       </div>
     </div>

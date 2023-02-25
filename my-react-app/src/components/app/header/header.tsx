@@ -11,12 +11,15 @@ import {
   resetSelectedGenres,
   resetSort,
   resetYearFilter,
+  updMobileActive,
 } from '../../../additional/consts/actions';
 
 function Header() {
-  const { userAuth } = useSelector((store: Store) => store);
+  const { userAuth, mobileActive } = useSelector((store: Store) => store);
+  console.log(mobileActive);
   const dispatch = useDispatch();
   const boundUpdModalActive = () => dispatch(updModalActive(true));
+  const boundUpdMobileActive = () => dispatch(updMobileActive(!mobileActive));
   const resetAll = () => {
     dispatch(resetQuickFilter());
     dispatch(resetSelectedGenres());
@@ -33,12 +36,22 @@ function Header() {
 
   return (
     <header className="header">
-      <Link className="header__link-home" to="/">
-        Home
-      </Link>
-      <Link className="header__link-home" to="/search">
-        Search
-      </Link>
+      <nav>
+        <Link className="header__link-home" to="/">
+          Home
+        </Link>
+        <Link className="header__link-home" to="/search">
+          Search
+        </Link>
+      </nav>
+      <button
+        onClick={boundUpdMobileActive}
+        className="mobile-btn"
+        type="button"
+        aria-label="Filter mobile"
+      >
+        <span className="mobile-filter-icon" />
+      </button>
       {userAuth ? (
         <button onClick={boundExit} type="button" className="header__btn-login">
           Выйти
@@ -56,4 +69,4 @@ function Header() {
   );
 }
 
-export default Header;
+export { Header };

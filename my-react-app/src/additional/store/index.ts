@@ -5,6 +5,7 @@ import { selectedGenresReducer } from './selected_genres_reducer';
 import { yearFilterReducer } from './year_filter_reducer';
 import { sortReducer } from './sort_reducer';
 import { modalActiveReducer } from './modal_active_reducer';
+import { mobileActiveReducer } from './mobile_active_reducer';
 import { Films } from '../consts/films';
 import { userAuthReducer } from './user_auth_reducer';
 import { favorMoviesReducer } from './favor_movies_reducer';
@@ -19,6 +20,7 @@ type Store = {
   quickFilter: string;
   sort: string;
   modalActive: boolean;
+  mobileActive: boolean;
   userAuth: boolean;
   favorMovies: Films[];
   bookmarkMovies: Films[];
@@ -32,6 +34,7 @@ const rootReducer = combineReducers({
   quickFilter: quickFilterReducer,
   sort: sortReducer,
   modalActive: modalActiveReducer,
+  mobileActive: mobileActiveReducer,
   userAuth: userAuthReducer,
   favorMovies: favorMoviesReducer,
   bookmarkMovies: bookmarkMoviesReducer,

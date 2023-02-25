@@ -1,10 +1,14 @@
 .sidebar {
+  position: sticky;
+  top: 10px;
+
+  width: 245px;
+  height: 725px;
+  margin-top: 15px;
   margin-left: 25px;
   padding: 15px;
+
   border: 1px solid #efefef;
-  min-width: 205px;
-  max-height: 780px;
-  margin-top: 15px;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 }
@@ -17,7 +21,7 @@
 
 .sidebar__btn-reset {
   height: 30px;
-  width: 100%;
+  width: 200px;
   background-color: #2a2a2d;
   color: white;
   border: none;
@@ -53,4 +57,10 @@
 }
 .sidebar__label span {
   margin-left: 5px;
+}
+
+@media (max-width: 560px) {
+  .sidebar {
+    display: none;
+  }
 }

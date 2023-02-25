@@ -11,6 +11,7 @@ const ACT_TYPES = {
   UPD_YEAR_FILTER: 'UPD_YEAR_FILTER',
   RESET_YEAR_FILTER: 'RESET_YEAR_FILTER',
   UPD_MODAL_ACTIVE: 'UPD_MODAL_ACTIVE',
+  UPD_MOBILE_ACTIVE: 'UPD_MOBILE_ACTIVE',
   UPD_USER_AUTH: 'UPD_USER_AUTH',
   UPD_FAVOR_MOVIES: 'UPD_FAVOR_MOVIES',
   DELETE_FAVOR_MOVIES: 'DELETE_FAVOR_MOVIES',
@@ -29,6 +30,7 @@ const deleteUnselGenres = actionCreator(ACT_TYPES.DELETE_UNSEL_GENRES);
 const updSort = actionCreator(ACT_TYPES.UPD_SORT);
 const updYearFilter = actionCreator(ACT_TYPES.UPD_YEAR_FILTER);
 const updModalActive = actionCreator(ACT_TYPES.UPD_MODAL_ACTIVE);
+const updMobileActive = actionCreator(ACT_TYPES.UPD_MOBILE_ACTIVE);
 const updUserAuth = actionCreator(ACT_TYPES.UPD_USER_AUTH);
 const updFavorMovies = actionCreator(ACT_TYPES.UPD_FAVOR_MOVIES);
 const updBookmarkMovies = actionCreator(ACT_TYPES.UPD_BOOKMARK_MOVIES);
@@ -55,6 +57,7 @@ export {
   updYearFilter,
   resetYearFilter,
   updModalActive,
+  updMobileActive,
   updUserAuth,
   updBookmarkMovies,
   updFavorMovies,

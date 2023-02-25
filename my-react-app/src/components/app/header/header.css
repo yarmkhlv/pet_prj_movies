@@ -1,5 +1,6 @@
 .header {
-  width: 100%;
+  min-width: 100%;
+  padding: 0 30px;
   height: 50px;
   background-color: #18181b;
   display: flex;
@@ -8,7 +9,9 @@
 }
 
 .header__link-home {
-  margin-left: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
   color: #efeff1;
   text-decoration: none;
 }
@@ -19,7 +22,6 @@
   text-decoration: underline;
 }
 .header__btn-login {
-  margin-right: 50px;
   width: 60px;
   height: 30px;
   background-color: #9147ff;
@@ -30,4 +32,41 @@
 
 .header__btn-login:hover {
   background-color: #772ce8;
+}
+
+.mobile-btn {
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.mobile-filter-icon {
+  display: none;
+  position: relative;
+  width: 42px;
+  height: 4px;
+  background-color: white;
+  border: none;
+}
+.mobile-filter-icon::after,
+.mobile-filter-icon::before {
+  position: absolute;
+  left: 0;
+  content: '';
+  display: block;
+  width: 42px;
+  height: 4px;
+  background-color: white;
+}
+.mobile-filter-icon::after {
+  bottom: 10px;
+}
+.mobile-filter-icon::before {
+  top: 10px;
+}
+
+@media (max-width: 560px) {
+  .mobile-filter-icon {
+    display: block;
+  }
 }

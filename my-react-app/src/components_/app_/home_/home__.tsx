@@ -1,5 +1,5 @@
-import Sidebar from './sidebar/sidebar';
-import MovieList from './movie_list/movie_list';
+import Sidebar from './sidebar_/sidebar';
+import MovieList from './movie_list_/movie_list__';
 import './home.css';
 
 function Home() {

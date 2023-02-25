@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './sidebar.css';
-import { genres } from '../../../../additional/consts/other';
-import Pagination from './pagination/pagination';
-import ControlledSelect from './controlled_select/controlled_select';
+import { genres } from '../../../../additional_/consts/other';
+import Pagination from './pagination_/pagination__';
+import ControlledSelect from './controlled_select_/controlled_select__';
 import {
   OPTIONS_QUICK,
   OPTIONS_SORT,
   OPTIONS_YEAR,
-} from '../../../../additional/consts/options';
+} from '../../../../additional_/consts/options';
 import {
   updSelectedGenres,
   resetSelectedGenres,
@@ -17,9 +17,9 @@ import {
   resetSort,
   resetYearFilter,
   updQuickFilter,
-} from '../../../../additional/consts/actions';
-import { Store } from '../../../../additional/store';
-import getIdFromGenres from '../../../../additional/functions/get_id_from_genres';
+} from '../../../../additional_/consts/actions';
+import { Store } from '../../../../additional_/store';
+import getIdFromGenres from '../../../../additional_/functions/get_id_from_genres';
 
 function Sidebar() {
   const { sort, yearFilter, selectedGenres, userAuth, quickFilter } =

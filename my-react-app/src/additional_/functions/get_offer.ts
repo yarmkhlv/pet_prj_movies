@@ -1,4 +1,4 @@
-import MovieList from '../../components/app/home/movie_list/movie_list';
+import MovieList from '../../components_/app_/home_/movie_list_/movie_list__';
 import { Films } from '../consts/films';
 
 function getOffer(

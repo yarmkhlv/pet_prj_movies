@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Store } from '../../../../../additional/store';
-import { updCurrentPage } from '../../../../../additional/consts/actions';
-import { PER_PAGE } from '../../../../../additional/consts/other';
+import { Store } from '../../../../../additional_/store';
+import { updCurrentPage } from '../../../../../additional_/consts/actions';
+import { PER_PAGE } from '../../../../../additional_/consts/other';
 import './pagination.css';
 
 function Pagination() {

@@ -1,15 +1,15 @@
 import './movie_card.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Films } from '../../../../../additional/consts/films';
+import { Films } from '../../../../../additional_/consts/films';
 import {
   updFavorMovies,
   updBookmarkMovies,
   deleteBookmarkMovies,
   deleteFavorMovies,
   updModalActive,
-} from '../../../../../additional/consts/actions';
-import { Store } from '../../../../../additional/store';
+} from '../../../../../additional_/consts/actions';
+import { Store } from '../../../../../additional_/store';
 
 function MovieCard(props: { movie: Films }) {
   const { movie } = props;

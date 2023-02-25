@@ -1,7 +1,7 @@
 import './header.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Store } from '../../../additional_/store';
+import { Store } from '../../../additional/store';
 import {
   updModalActive,
   updUserAuth,
@@ -11,7 +11,7 @@ import {
   resetSelectedGenres,
   resetSort,
   resetYearFilter,
-} from '../../../additional_/consts/actions';
+} from '../../../additional/consts/actions';
 
 function Header() {
   const { userAuth } = useSelector((store: Store) => store);

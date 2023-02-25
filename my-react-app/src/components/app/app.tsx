@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { Store } from '../../additional_/store';
-import Header from './header_/header__';
+import { Store } from '../../additional/store';
+import Header from './header/header';
 import './app.css';
-import { Home } from './home_/home__';
-import { MovieDetails } from './movie_details_/movie_details__';
-import { updCurrentMovies } from '../../additional_/consts/actions';
-import { filterMovies } from '../../additional_/functions/filter_movies';
-import { films } from '../../additional_/consts/films';
-import { sortBy } from '../../additional_/functions/sort_by';
-import { Modal } from './modal_/modal__';
-import { Search } from './search_/search__';
+import { Home } from './home/home';
+import { MovieDetails } from './movie_details/movie_details';
+import { updCurrentMovies } from '../../additional/consts/actions';
+import { filterMovies } from '../../additional/functions/filter_movies';
+import { films } from '../../additional/consts/films';
+import { sortBy } from '../../additional/functions/sort_by';
+import { Modal } from './modal/modal';
+import { Search } from './search/search';
 
 function App() {
   const {

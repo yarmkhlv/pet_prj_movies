@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { getMovieById } from '../../../additional_/functions/get_movie_by_id';
-import { films } from '../../../additional_/consts/films';
+import { getMovieById } from '../../../additional/functions/get_movie_by_id';
+import { films } from '../../../additional/consts/films';
 import './movie_details.css';
 
 function MovieDetails() {

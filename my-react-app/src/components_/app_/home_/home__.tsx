@@ -1,4 +1,4 @@
-import Sidebar from './sidebar_/sidebar';
+import Sidebar from './sidebar_/sidebar__';
 import MovieList from './movie_list_/movie_list__';
 import './home.css';
 

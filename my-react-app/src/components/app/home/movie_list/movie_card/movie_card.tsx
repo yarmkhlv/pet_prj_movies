@@ -1,6 +1,6 @@
 import './movie_card.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Films } from '../../../../../additional/consts/films';
 import {
   updFavorMovies,
@@ -72,12 +72,12 @@ function MovieCard(props: { movie: Films }) {
         </div>
         <div className="movieCard__poster-title">{movie.title}</div>
         <div className="movieCard__poster__cont-link">
-          <Link
+          <NavLink
             className="movieCard__poster__link"
             to={`/movie-details/${movie.id}`}
           >
             Подробнее
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>

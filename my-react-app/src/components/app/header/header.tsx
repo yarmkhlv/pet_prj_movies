@@ -1,6 +1,6 @@
 import './header.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Store } from '../../../store';
 import {
   updModalActive,
@@ -37,16 +37,19 @@ function Header() {
   return (
     <header className="header">
       <nav>
-        <Link className="header__link-home" to="/">
+        <NavLink className="header__link-home" to="/">
           Home
-        </Link>
-        <Link className="header__link-home" to="/search">
+        </NavLink>
+        <NavLink className="header__link-home" to="/search">
           Search
-        </Link>
+        </NavLink>
       </nav>
+
       <button
         onClick={boundUpdMobileActive}
-        className="mobile-btn"
+        className={
+          mobileActive ? 'mobile-filter mobile-filter-active' : 'mobile-filter'
+        }
         type="button"
         aria-label="Filter mobile"
       >

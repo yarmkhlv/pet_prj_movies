@@ -10,7 +10,6 @@
 
 html,
 body {
-  min-height: 100vh;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
 }
@@ -33,7 +32,6 @@ a:visited {
   grid-template-areas:
     'header header'
     'sidebar movies';
-  max-height: 100vh;
 }
 
 @media (max-width: 560px) {

@@ -1,11 +1,16 @@
 .search {
-  width: 100vw;
-  height: calc(100vh - 50px);
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-
+.grid-for-search {
+  grid-area: 2 / sidebar/2/movies;
+}
+.search__form {
+  padding: 15px;
+}
 .search__form__text-el {
   font-size: 24px;
   margin-top: 10px;
@@ -34,8 +39,7 @@ select {
   position: relative;
 }
 .offer__movie__container-img {
-  height: 500px;
-  width: 350px;
+  width: 450px;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -75,5 +79,25 @@ select {
 }
 
 .alert {
+  max-width: 500px;
+  padding: 25px;
   font-size: 24px;
+}
+
+@media (max-width: 1000px) {
+  .offer__movie__container-img {
+    width: 350px;
+  }
+}
+@media (max-width: 700px) {
+  .search {
+    flex-direction: column;
+  }
+  .search__offer-container {
+    padding-top: 10px;
+    order: -1;
+  }
+  .offer__movie__container-img {
+    width: 250px;
+  }
 }

@@ -21,7 +21,7 @@ function MovieDetails() {
   })();
 
   return (
-    <div>
+    <div className="grid-for-movie-details">
       {details ? (
         <div className="movie-details">
           <div className="movie-details__container-img">
@@ -33,13 +33,16 @@ function MovieDetails() {
             <p className="short__text">{details.overview}</p>
             <div className="movie-details__info">
               <div className="movie-details__info__buttons">
-                <button className="info__button_elem active" type="button">
+                <button
+                  className="info__button_elem info__button-active"
+                  type="button"
+                >
                   Детали
                 </button>
-                <button className="info__button_elem" type="button">
+                <button className="info__button_elem disabled" type="button">
                   Видео
                 </button>
-                <button className="info__button_elem" type="button">
+                <button className="info__button_elem disabled" type="button">
                   Актеры
                 </button>
               </div>

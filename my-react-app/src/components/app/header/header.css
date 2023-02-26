@@ -1,5 +1,4 @@
 .header {
-  min-width: 100%;
   padding: 0 30px;
   height: 50px;
   background-color: #18181b;
@@ -35,7 +34,7 @@
   background-color: #772ce8;
 }
 
-.mobile-btn {
+.mobile-filter {
   height: 24px;
   border: none;
   cursor: pointer;
@@ -44,7 +43,7 @@
 .mobile-filter-icon {
   display: none;
   position: relative;
-  width: 42px;
+  width: 32px;
   height: 4px;
   background-color: white;
   border: none;
@@ -55,7 +54,7 @@
   left: 0;
   content: '';
   display: block;
-  width: 42px;
+  width: 32px;
   height: 4px;
   background-color: white;
 }
@@ -64,6 +63,17 @@
 }
 .mobile-filter-icon::before {
   top: 10px;
+}
+.mobile-filter-active .mobile-filter-icon {
+  background-color: transparent;
+}
+.mobile-filter-active .mobile-filter-icon::before {
+  top: 0px;
+  transform: rotate(45deg);
+}
+.mobile-filter-active .mobile-filter-icon::after {
+  bottom: 0px;
+  transform: rotate(-45deg);
 }
 
 @media (max-width: 560px) {

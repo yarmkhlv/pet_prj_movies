@@ -1,6 +1,6 @@
 .sidebar {
   display: grid;
-  grid-template-rows: 200px minmax(50px, 1fr) 53px;
+  grid-template-rows: auto minmax(50px, 1fr) 53px;
   grid-area: sidebar;
   width: 245px;
   max-height: calc(100vh - 50px - 50px);
@@ -71,5 +71,8 @@
     max-height: calc(100vh - 50px);
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;
+  }
+  .mobileHide {
+    display: none;
   }
 }

@@ -1,5 +1,5 @@
-import { SELECTED_YEAR } from '../consts/other';
-import { ACT_TYPES } from '../consts/actions';
+import { SELECTED_YEAR } from '../additional/consts/other';
+import { ACT_TYPES } from '../additional/consts/actions';
 
 const defaultState = SELECTED_YEAR.any;
 

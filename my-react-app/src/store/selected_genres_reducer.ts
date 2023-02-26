@@ -1,4 +1,4 @@
-import { ACT_TYPES } from '../consts/actions';
+import { ACT_TYPES } from '../additional/consts/actions';
 
 const defaultState: number[] = [];
 

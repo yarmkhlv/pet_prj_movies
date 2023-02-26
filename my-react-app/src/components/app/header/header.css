@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  grid-area: header;
 }
 
 .header__link-home {
@@ -68,5 +69,11 @@
 @media (max-width: 560px) {
   .mobile-filter-icon {
     display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-btn {
+    margin-right: 15px;
   }
 }

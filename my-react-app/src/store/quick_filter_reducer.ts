@@ -1,5 +1,5 @@
-import { SELECTED_QUICK } from '../consts/other';
-import { ACT_TYPES } from '../consts/actions';
+import { SELECTED_QUICK } from '../additional/consts/other';
+import { ACT_TYPES } from '../additional/consts/actions';
 
 const defaultState = SELECTED_QUICK.choose;
 

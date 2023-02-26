@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { Store } from '../../additional/store';
+import { Store } from '../../store';
 import { Header } from './header/header';
 import { Home } from './home/home';
 import { MovieDetails } from './movie_details/movie_details';
@@ -62,13 +62,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main className="main">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movie-details/:movieId" element={<MovieDetails />} />
-          <Route path="/search" element={<Search />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie-details/:movieId" element={<MovieDetails />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
       {modalActive ? <Modal /> : null}
     </div>
   );

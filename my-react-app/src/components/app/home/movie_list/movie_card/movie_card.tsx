@@ -9,7 +9,7 @@ import {
   deleteFavorMovies,
   updModalActive,
 } from '../../../../../additional/consts/actions';
-import { Store } from '../../../../../additional/store';
+import { Store } from '../../../../../store';
 
 function MovieCard(props: { movie: Films }) {
   const { movie } = props;

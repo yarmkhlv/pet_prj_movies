@@ -18,7 +18,7 @@ import {
   resetYearFilter,
   updQuickFilter,
 } from '../../../../additional/consts/actions';
-import { Store } from '../../../../additional/store';
+import { Store } from '../../../../store';
 import getIdFromGenres from '../../../../additional/functions/get_id_from_genres';
 
 function Sidebar() {
@@ -64,34 +64,37 @@ function Sidebar() {
   };
   return (
     <div className="sidebar">
-      <h2 className="sidebar__text-filters">Фильтры:</h2>
-      <button
-        onClick={() => returnDefault()}
-        type="button"
-        className="sidebar__btn-reset"
-      >
-        Сбросить все фильтры
-      </button>
       <div>
-        <p className="sidebar__text-el">Сортировать по:</p>
-        <ControlledSelect
-          currentState={sort}
-          className="sidebar__select"
-          handleChange={boundUpdSort}
-          name="criterion"
-          options={OPTIONS_SORT}
-        />
+        <h2 className="sidebar__text-filters">Фильтры:</h2>
+        <button
+          onClick={() => returnDefault()}
+          type="button"
+          className="sidebar__btn-reset"
+        >
+          Сбросить все фильтры
+        </button>
+        <div>
+          <p className="sidebar__text-el">Сортировать по:</p>
+          <ControlledSelect
+            currentState={sort}
+            className="sidebar__select"
+            handleChange={boundUpdSort}
+            name="criterion"
+            options={OPTIONS_SORT}
+          />
+        </div>
+        <div>
+          <p className="sidebar__text-el">Год релиза:</p>
+          <ControlledSelect
+            currentState={yearFilter}
+            className="sidebar__select"
+            handleChange={boundUpdYearFilter}
+            name="releaseYear"
+            options={OPTIONS_YEAR}
+          />
+        </div>
       </div>
-      <div>
-        <p className="sidebar__text-el">Год релиза:</p>
-        <ControlledSelect
-          currentState={yearFilter}
-          className="sidebar__select"
-          handleChange={boundUpdYearFilter}
-          name="releaseYear"
-          options={OPTIONS_YEAR}
-        />
-      </div>
+
       {userAuth ? (
         <div>
           <p className="sidebar__text-el">Быстрый доступ:</p>

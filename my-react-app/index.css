@@ -25,3 +25,23 @@ a:visited {
   text-decoration: none;
   display: inline-block;
 }
+
+.App {
+  display: grid;
+  grid-template-rows: 50px auto;
+  grid-template-columns: 295px auto;
+  grid-template-areas:
+    'header header'
+    'sidebar movies';
+  max-height: 100vh;
+}
+
+@media (max-width: 560px) {
+  .App {
+    grid-template-rows: 50px auto;
+    grid-template-columns: 0 auto;
+    grid-template-areas:
+      'header header'
+      'sidebar movies';
+  }
+}

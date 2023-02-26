@@ -1,7 +1,7 @@
 import './header.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Store } from '../../../additional/store';
+import { Store } from '../../../store';
 import {
   updModalActive,
   updUserAuth,
@@ -16,7 +16,7 @@ import {
 
 function Header() {
   const { userAuth, mobileActive } = useSelector((store: Store) => store);
-  console.log(mobileActive);
+
   const dispatch = useDispatch();
   const boundUpdModalActive = () => dispatch(updModalActive(true));
   const boundUpdMobileActive = () => dispatch(updMobileActive(!mobileActive));

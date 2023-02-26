@@ -1,15 +1,16 @@
 .movieList {
-  width: 70%;
-  margin: 15px 0 25px 50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
   column-gap: 20px;
-  row-gap: 40px;
   justify-content: center;
+
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  grid-area: movies;
 }
 
 @media (max-width: 560px) {
   .movieList {
-    width: 100%;
+    /* grid-area: 2 / sidebar / 2 / movies; */
   }
 }

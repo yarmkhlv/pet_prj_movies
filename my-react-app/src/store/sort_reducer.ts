@@ -1,5 +1,5 @@
-import { SELECTED_VALUE } from '../consts/other';
-import { ACT_TYPES } from '../consts/actions';
+import { SELECTED_VALUE } from '../additional/consts/other';
+import { ACT_TYPES } from '../additional/consts/actions';
 
 const defaultState = SELECTED_VALUE.popularDescending;
 

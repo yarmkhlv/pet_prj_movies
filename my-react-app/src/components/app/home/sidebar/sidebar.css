@@ -1,16 +1,18 @@
 .sidebar {
-  position: sticky;
-  top: 10px;
-
+  display: grid;
+  grid-template-rows: 200px minmax(50px, 1fr) 53px;
+  grid-area: sidebar;
   width: 245px;
-  height: 725px;
-  margin-top: 15px;
-  margin-left: 25px;
+  max-height: calc(100vh - 50px - 50px);
   padding: 15px;
 
   border: 1px solid #efefef;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+  justify-self: center;
+  align-self: start;
+  margin-top: 25px;
+  background-color: #fff;
 }
 
 .sidebar__text-filters {
@@ -49,6 +51,7 @@
 }
 .sidebar__labels-block {
   margin-top: 15px;
+  overflow-y: auto;
 }
 .sidebar__label {
   display: block;
@@ -61,6 +64,12 @@
 
 @media (max-width: 560px) {
   .sidebar {
-    display: none;
+    justify-self: left;
+    align-self: start;
+    margin-top: 0;
+    z-index: 100;
+    max-height: calc(100vh - 50px);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }

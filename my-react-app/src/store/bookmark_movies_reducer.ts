@@ -1,6 +1,6 @@
-import { ACT_TYPES } from '../consts/actions';
-import { Films } from '../consts/films';
-import { tryToGetLocalArr } from '../functions/try_to_get_local';
+import { ACT_TYPES } from '../additional/consts/actions';
+import { Films } from '../additional/consts/films';
+import { tryToGetLocalArr } from '../additional/functions/try_to_get_local';
 
 const defaultState: Films[] = tryToGetLocalArr('BookmarkMovies');
 

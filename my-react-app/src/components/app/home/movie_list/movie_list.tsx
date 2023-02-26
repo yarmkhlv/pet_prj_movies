@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import MovieCard from './movie_card/movie_card';
 import { Films } from '../../../../additional/consts/films';
 import './movie_list.css';
-import { Store } from '../../../../additional/store';
+import { Store } from '../../../../store';
 import { PER_PAGE } from '../../../../additional/consts/other';
 import { showMoviesPerPage } from '../../../../additional/functions/show_movies_per_page';
 

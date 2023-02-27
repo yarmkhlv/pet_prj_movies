@@ -63,7 +63,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index path="/" element={<Home />} />
         <Route path="/movie-details/:movieId" element={<MovieDetails />} />
         <Route path="/search" element={<Search />} />
       </Routes>

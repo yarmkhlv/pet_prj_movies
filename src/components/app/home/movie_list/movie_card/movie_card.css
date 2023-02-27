@@ -61,7 +61,7 @@
 .poster-btns__favorites {
   width: 15px;
   height: 15px;
-  background-image: url('../../../src/assets/icon-favor.png');
+  background-image: url('./../../../../../assets/icon-favor.png');
   background-repeat: no-repeat;
   background-color: #18181b;
   background-position: center center;
@@ -69,13 +69,13 @@
   border: none;
 }
 .favotires-colored {
-  background-image: url('../../../src/assets/icon-favor-colored.png');
+  background-image: url('./../../../../../assets/icon-favor-colored.png');
 }
 
 .poster-btns__postpone {
   width: 15px;
   height: 15px;
-  background-image: url('../../../src/assets/icon-post.png');
+  background-image: url('./../../../../../assets/icon-post.png');
   background-repeat: no-repeat;
   background-color: #18181b;
   background-position: center center;
@@ -83,7 +83,7 @@
   border: none;
 }
 .postpone-colored {
-  background-image: url('../../../src/assets/icon-post-colored.png');
+  background-image: url('./../../../../../assets/icon-post-colored.png');
 }
 .movieCard__poster-title {
   width: 200px;

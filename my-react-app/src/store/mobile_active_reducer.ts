@@ -1,4 +1,4 @@
-import { ACT_TYPES } from '../additional/consts/actions';
+import { ACT_TYPES } from '../helpers/consts/actions';
 
 const defaultState = false;
 

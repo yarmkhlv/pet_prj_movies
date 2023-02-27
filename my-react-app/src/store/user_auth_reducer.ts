@@ -1,5 +1,5 @@
-import { ACT_TYPES } from '../additional/consts/actions';
-import { tryToGetLocalUser } from '../additional/functions/try_to_get_local';
+import { ACT_TYPES } from '../helpers/consts/actions';
+import { tryToGetLocalUser } from '../helpers/functions/try_to_get_local';
 
 const defaultState = tryToGetLocalUser('user');
 

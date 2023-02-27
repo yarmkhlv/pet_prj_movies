@@ -1,14 +1,14 @@
 import './movie_card.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Films } from '../../../../../additional/consts/films';
+import { Films } from '../../../../../helpers/consts/films';
 import {
   updFavorMovies,
   updBookmarkMovies,
   deleteBookmarkMovies,
   deleteFavorMovies,
   updModalActive,
-} from '../../../../../additional/consts/actions';
+} from '../../../../../helpers/consts/actions';
 import { Store } from '../../../../../store';
 
 function MovieCard(props: { movie: Films }) {

@@ -1,11 +1,8 @@
 import './modal.css';
 import { FormEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  updModalActive,
-  updUserAuth,
-} from '../../../additional/consts/actions';
-import { formValidation } from '../../../additional/functions/form_validation';
+import { updModalActive, updUserAuth } from '../../../helpers/consts/actions';
+import { formValidation } from '../../../helpers/functions/form_validation';
 
 function Modal() {
   const [nameInput, setNameInput] = useState('');

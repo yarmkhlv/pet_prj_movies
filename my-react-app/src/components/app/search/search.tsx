@@ -1,9 +1,9 @@
 /* eslint-disable no-nested-ternary */
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { genresOffer } from '../../../additional/consts/other';
-import { Films, films } from '../../../additional/consts/films';
-import { getOffer } from '../../../additional/functions/get_offer';
+import { genresOffer } from '../../../helpers/consts/other';
+import { Films, films } from '../../../helpers/consts/films';
+import { getOffer } from '../../../helpers/functions/get_offer';
 import './search.css';
 
 function Search() {

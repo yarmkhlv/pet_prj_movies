@@ -12,7 +12,7 @@ import {
   resetSort,
   resetYearFilter,
   updMobileActive,
-} from '../../../additional/consts/actions';
+} from '../../../helpers/consts/actions';
 
 function Header() {
   const { userAuth, mobileActive } = useSelector((store: Store) => store);

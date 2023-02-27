@@ -1,4 +1,4 @@
-import { Option } from '../../../../../additional/consts/options';
+import { Option } from '../../../../../helpers/consts/options';
 
 function ControlledSelect(props: {
   handleChange: (a: string) => void;

@@ -5,10 +5,10 @@ import { Store } from '../../store';
 import { Header } from './header/header';
 import { Home } from './home/home';
 import { MovieDetails } from './movie_details/movie_details';
-import { updCurrentMovies } from '../../additional/consts/actions';
-import { filterMovies } from '../../additional/functions/filter_movies';
-import { films } from '../../additional/consts/films';
-import { sortBy } from '../../additional/functions/sort_by';
+import { updCurrentMovies } from '../../helpers/consts/actions';
+import { filterMovies } from '../../helpers/functions/filter_movies';
+import { films } from '../../helpers/consts/films';
+import { sortBy } from '../../helpers/functions/sort_by';
 import { Modal } from './modal/modal';
 import { Search } from './search/search';
 

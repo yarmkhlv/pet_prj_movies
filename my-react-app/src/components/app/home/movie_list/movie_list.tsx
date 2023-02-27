@@ -1,11 +1,11 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import MovieCard from './movie_card/movie_card';
-import { Films } from '../../../../additional/consts/films';
+import { Films } from '../../../../helpers/consts/films';
 import './movie_list.css';
 import { Store } from '../../../../store';
-import { PER_PAGE } from '../../../../additional/consts/other';
-import { showMoviesPerPage } from '../../../../additional/functions/show_movies_per_page';
+import { PER_PAGE } from '../../../../helpers/consts/other';
+import { showMoviesPerPage } from '../../../../helpers/functions/show_movies_per_page';
 
 function MovieList() {
   const { currentMovies, currentPage } = useSelector((store: Store) => store);

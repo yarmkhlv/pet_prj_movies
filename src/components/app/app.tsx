@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { Store } from '../../store';
 import { Header } from './header/header';
 import { Home } from './home/home';
@@ -61,12 +61,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="/movie-details/:movieId" element={<MovieDetails />} />
-        <Route path="/search" element={<Search />} />
-      </Routes>
+      <BrowserRouter basename="/pet_prj_movies">
+        <Header />
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route path="/movie-details/:movieId" element={<MovieDetails />} />
+          <Route path="/search" element={<Search />} />
+        </Routes>
+      </BrowserRouter>
+
       {modalActive ? <Modal /> : null}
     </div>
   );

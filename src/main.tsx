@@ -7,10 +7,10 @@ import { store } from './store';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    {/* <BrowserRouter basename="/pet_prj_movies"> */}
+    <Provider store={store}>
+      <App />
+    </Provider>
+    {/* </BrowserRouter> */}
   </React.StrictMode>
 );

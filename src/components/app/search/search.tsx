@@ -83,16 +83,16 @@ function Search() {
               </div>
             </div>
             <div className="offer__buttons">
-              <button
-                className="offer__buttons__el btn-not-suitable"
-                type="button"
-              >
-                <NavLink to={`/movie-details/${movieOffer.id}`}>
+              <button className="offer__buttons__el" type="button">
+                <NavLink
+                  className="offer__link"
+                  to={`/movie-details/${movieOffer.id}`}
+                >
                   Подходит
                 </NavLink>
               </button>
               <button
-                className="offer__buttons__el btn-fits"
+                className="offer__buttons__el"
                 type="button"
                 onClick={() => setCurrentOffer(currentOffer + 1)}
               >
